@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "531395425663",
+    "firebase_url": "https://focus-camp-app.firebaseio.com",
+    "project_id": "focus-camp-app",
+    "storage_bucket": "focus-camp-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531395425663:android:16b320ccd8c2d2a656564a",
+        "android_client_info": {
+          "package_name": "jm.focuscamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531395425663-20h3cuff4k1mnbmsgsr4lfau827jbqbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jm.focuscamp",
+            "certificate_hash": "e9c51c246b758828531c39c4e7cd9d9d65b4ed2b"
+          }
+        },
+        {
+          "client_id": "531395425663-31sq87ibg1ijngvra570j8q8br6s2gjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl4QyJ2hW5NwKB-njpSketpeolqjAT-0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531395425663-31sq87ibg1ijngvra570j8q8br6s2gjb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
