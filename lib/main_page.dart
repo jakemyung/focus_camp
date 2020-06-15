@@ -160,58 +160,6 @@ class _MainPageState extends State<MainPage> {
                     ),
                   )),
             ),
-//            MenuButton(
-//              title: 'HISTORY',
-//              screen: FocusInputPage.id,
-//            ),
-//            Expanded(
-//              flex: 2,
-//              child: FittedBox(
-//                  fit: BoxFit.contain,
-//                  child: RaisedButton(
-//                    elevation: 2,
-//                    color: Colors.grey,
-//                    padding: EdgeInsets.all(0.0),
-//                    splashColor: Colors.blueAccent,
-//                    shape: RoundedRectangleBorder(
-//                        borderRadius: BorderRadius.circular(24)),
-//                    onPressed: () async {
-//                      Navigator.pushNamed(
-//                        context,
-//                        AuthenticationPage.id,
-//                      );
-//                    },
-//                    child: Container(
-//                      width: 120,
-//                      child: Text(
-//                        'Account',
-//                        style: TextStyle(color: Colors.white),
-//                        textAlign: TextAlign.center,
-//                        strutStyle: StrutStyle(
-//                          forceStrutHeight: true,
-//                        ),
-//                      ),
-//                    ),
-//                  )),
-//            ),
-
-//            Expanded(
-//              flex: 2,
-//              child: Switch(
-//                value: battery,
-//                onChanged: (value) {
-//                  setState(() {
-//                    getBatteryStatus();
-//                    battery = value;
-//                    if (battery) {
-//                    } else {}
-//                  });
-//                },
-//                activeTrackColor: Colors.lightBlueAccent,
-//                activeColor: Colors.blue,
-//              ),
-//            ),
-
             Expanded(child: Container()),
           ],
         ),

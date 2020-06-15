@@ -5,8 +5,6 @@ import 'warning_page.dart';
 class FocusInputPage extends StatefulWidget {
   static const String id = 'focus_input_page';
 
-  //FocusInputPage({Key key}) : super(key: key);
-
   @override
   _FocusInputPageState createState() => _FocusInputPageState();
 }

@@ -162,24 +162,6 @@ class LoginPageState extends State<LoginPage> {
                       onPressed: _handleSignIn,
                     ),
                   ),
-                  Opacity(
-                    opacity: 0.85,
-                    child: SignInButton(
-                      Buttons.Facebook,
-                      onPressed: () {
-                        _showButtonPressDialog(context, 'Facebook');
-                      },
-                    ),
-                  ),
-                  Opacity(
-                    opacity: 0.85,
-                    child: SignInButton(
-                      Buttons.Apple,
-                      onPressed: () {
-                        _showButtonPressDialog(context, 'Apple');
-                      },
-                    ),
-                  ),
                 ],
               ),
             ),

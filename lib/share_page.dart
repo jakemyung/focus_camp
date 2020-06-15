@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'menu_button.dart';
 import 'focusing_page.dart';
-
 import 'package:flutter_share/flutter_share.dart';
-
-import 'package:screenshot/screenshot.dart';
-
-import 'dart:io';
-import 'package:path_provider/path_provider.dart';
 
 class SharePage extends StatefulWidget {
   static const String id = 'share_page';

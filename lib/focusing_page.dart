@@ -6,7 +6,6 @@ import 'package:quiver/async.dart';
 import 'success_page.dart';
 import 'package:wakelock/wakelock.dart';
 import 'package:screen_state/screen_state.dart';
-
 import 'package:screenshot/screenshot.dart';
 
 class FocusingPage extends StatefulWidget {
@@ -56,14 +55,7 @@ class _FocusingPageState extends State<FocusingPage>
     print('length of notificaiton Listion ${_notificationList.length}');
   }
 
-  void startListening() {
-//    _screen = new Screen();
-//    try {
-//      _subscription = _screen.screenStateStream.listen(onData);
-//    } on ScreenStateException catch (exception) {
-//      print(exception);
-//    }
-  }
+  void startListening() {}
 
   void stopListening() {
     _subscription.cancel();
@@ -107,14 +99,6 @@ class _FocusingPageState extends State<FocusingPage>
                   if (_notificationList.last ==
                       ScreenStateEvent.SCREEN_UNLOCKED) {
                     _notificationList = [];
-//                      print(('FAILED $screenStatus and $_notification'));
-//                      sub.cancel();
-//                      Wakelock.disable();
-//                      Navigator.pushNamed(
-//                        context,
-//                        FailPage.id,
-//                      );
-
                   }
                 } else {
                   print(('FAILED $screenStatus and $_notification'));

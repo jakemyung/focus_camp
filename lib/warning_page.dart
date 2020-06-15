@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'menu_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'focusing_page.dart';
 import 'share_page.dart';
 
 class WarningPage extends StatefulWidget {
