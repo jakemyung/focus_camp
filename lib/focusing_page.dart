@@ -6,14 +6,8 @@ import 'package:quiver/async.dart';
 import 'success_page.dart';
 import 'package:wakelock/wakelock.dart';
 import 'package:screen_state/screen_state.dart';
-import 'package:flutter_share/flutter_share.dart';
-import 'package:documents_picker/documents_picker.dart';
+
 import 'package:screenshot/screenshot.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'dart:io';
-import 'dart:typed_data';
-import 'package:screenshot/screenshot.dart';
-import 'package:path_provider/path_provider.dart';
 
 class FocusingPage extends StatefulWidget {
   static const String id = 'focusing_page';
@@ -26,11 +20,9 @@ class FocusingPage extends StatefulWidget {
 
 class _FocusingPageState extends State<FocusingPage>
     with WidgetsBindingObserver {
-  File _imageFile;
-
   var screenStatus;
-  int _start = 400;
-  int _current = 400;
+  int _start = 3;
+  int _current = 3;
   AppLifecycleState _notification;
   var _notificationList = [];
   Screen _screen;
@@ -55,34 +47,6 @@ class _FocusingPageState extends State<FocusingPage>
 
   Future<void> initPlatformState() async {
     startListening();
-  }
-
-  Future<void> share() async {
-    await FlutterShare.share(
-        title: 'Example share',
-        text: 'Example share text',
-        linkUrl: 'https://flutter.dev/',
-        chooserTitle: 'Example Chooser Title');
-  }
-
-  Future<void> shareScreenShot() async {
-    Directory directory;
-    if (Platform.isAndroid) {
-      directory = await getExternalStorageDirectory();
-    } else {
-      directory = await getApplicationDocumentsDirectory();
-    }
-    final String localPath =
-        '${directory.path}/${DateTime.now().toIso8601String()}.png';
-
-    await _controller.capture(path: localPath);
-
-    await Future.delayed(Duration(seconds: 1));
-
-    await FlutterShare.shareFile(
-      title: 'Compartilhar comprovante',
-      filePath: localPath,
-    );
   }
 
   void onData(ScreenStateEvent event) {
@@ -425,30 +389,6 @@ class _FocusingPageState extends State<FocusingPage>
                           width: 120,
                           child: Text(
                             'QUIT',
-                            style: TextStyle(color: Colors.white),
-                            textAlign: TextAlign.center,
-                            strutStyle: StrutStyle(
-                              forceStrutHeight: true,
-                            ),
-                          ),
-                        ),
-                      )),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: FlatButton(
-                        color: Colors.grey,
-                        padding: EdgeInsets.all(0.0),
-                        splashColor: Colors.blueAccent,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24)),
-                        onPressed: shareScreenShot,
-                        child: Container(
-                          width: 120,
-                          child: Text(
-                            'Share text and link',
                             style: TextStyle(color: Colors.white),
                             textAlign: TextAlign.center,
                             strutStyle: StrutStyle(

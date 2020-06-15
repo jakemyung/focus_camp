@@ -10,6 +10,7 @@ import 'fail_page.dart';
 import 'success_page.dart';
 import 'login_page.dart';
 import 'authentication_page.dart';
+import 'share_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           SuccessPage.id: (context) => SuccessPage(),
           LoginPage.id: (context) => LoginPage(),
           AuthenticationPage.id: (context) => AuthenticationPage(),
+          SharePage.id: (context) => SharePage(),
         },
         debugShowCheckedModeBanner: false,
       ),

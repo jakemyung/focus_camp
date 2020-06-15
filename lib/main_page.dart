@@ -132,7 +132,7 @@ class _MainPageState extends State<MainPage> {
               child: FittedBox(
                   fit: BoxFit.contain,
                   child: RaisedButton(
-                    elevation: 2,
+                    elevation: 8,
                     color: Colors.grey,
                     padding: EdgeInsets.all(0.0),
                     splashColor: Colors.blueAccent,

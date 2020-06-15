@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'menu_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'focusing_page.dart';
+import 'share_page.dart';
 
 class WarningPage extends StatefulWidget {
   static const String id = 'warning_page';
@@ -101,9 +102,10 @@ class _WarningPageState extends State<WarningPage> {
             ),
             MenuButton(
               title: 'start',
-              screen: FocusingPage.id,
+              screen: SharePage.id,
               focusingOn: args,
             ),
+            Expanded(child: Container()),
           ],
         ),
         // This trailing comma makes auto-formatting nicer for build methods.
