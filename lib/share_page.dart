@@ -27,8 +27,6 @@ class _SharePageState extends State<SharePage> {
   Widget build(BuildContext context) {
     final String args = ModalRoute.of(context).settings.arguments;
 
-    print('focusingOn from warning page is $args');
-
     return Container(
       constraints: BoxConstraints.expand(),
       decoration: BoxDecoration(

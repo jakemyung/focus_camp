@@ -19,7 +19,6 @@ class _SuccessPageState extends State<SuccessPage> {
   Future<void> _incrementCounter() async {
     final SharedPreferences prefs = await _prefs;
     final int streak = (prefs.getInt('streak') ?? 0) + 1;
-    print(streak);
     setState(() {
       _streak = prefs.setInt("streak", streak).then((bool success) {
         return streak;
@@ -39,7 +38,6 @@ class _SuccessPageState extends State<SuccessPage> {
   @override
   Widget build(BuildContext context) {
     final String args = ModalRoute.of(context).settings.arguments;
-    print('SUCCESS is from args $args');
 
     return Container(
       constraints: BoxConstraints.expand(),

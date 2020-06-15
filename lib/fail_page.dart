@@ -24,7 +24,6 @@ class _FailPageState extends State<FailPage> {
   Future<void> _zeroCounter() async {
     final SharedPreferences prefs = await _prefs;
     final int streak = 0;
-    print(streak);
     setState(() {
       _streak = prefs.setInt("streak", streak).then((bool success) {
         return streak;
@@ -37,12 +36,10 @@ class _FailPageState extends State<FailPage> {
 
     final SharedPreferences prefs = await _prefs;
     final bool token = false;
-    print(token);
     setState(() {
       _token = prefs.setBool("token", token).then((bool success) {
         return token;
       });
-      print('here is the real ${currentUser.uid}');
       _firestore
           .collection('tokens')
           .document(currentUser.uid)
@@ -62,8 +59,6 @@ class _FailPageState extends State<FailPage> {
   @override
   Widget build(BuildContext context) {
     final String args = ModalRoute.of(context).settings.arguments;
-    print('focusingOn is from args $args');
-
     return Container(
       constraints: BoxConstraints.expand(),
       decoration: BoxDecoration(

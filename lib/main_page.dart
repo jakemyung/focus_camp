@@ -64,7 +64,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     final bool args = ModalRoute.of(context).settings.arguments;
-    print('');
     return Container(
       constraints: BoxConstraints.expand(),
       decoration: BoxDecoration(

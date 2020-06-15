@@ -17,8 +17,6 @@ class _WarningPageState extends State<WarningPage> {
   Widget build(BuildContext context) {
     final String args = ModalRoute.of(context).settings.arguments;
 
-    print('focusingOn from warning page is $args');
-
     return Container(
       constraints: BoxConstraints.expand(),
       decoration: BoxDecoration(

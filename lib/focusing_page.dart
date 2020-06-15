@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:focuscamp/fail_page.dart';
 import 'package:quiver/async.dart';
@@ -20,8 +19,8 @@ class FocusingPage extends StatefulWidget {
 class _FocusingPageState extends State<FocusingPage>
     with WidgetsBindingObserver {
   var screenStatus;
-  int _start = 3;
-  int _current = 3;
+  int _start = 3600;
+  int _current = 3600;
   AppLifecycleState _notification;
   var _notificationList = [];
   Screen _screen;
@@ -49,10 +48,8 @@ class _FocusingPageState extends State<FocusingPage>
   }
 
   void onData(ScreenStateEvent event) {
-    print(event);
     screenStatus = event;
     _notificationList.add(event);
-    print('length of notificaiton Listion ${_notificationList.length}');
   }
 
   void startListening() {}
@@ -91,17 +88,13 @@ class _FocusingPageState extends State<FocusingPage>
             _current = _start - duration.elapsed.inSeconds;
 
             if (_notification == AppLifecycleState.paused) {
-              print('#1: _notification is $_notification');
               if (counter == 1) {
                 if (_notificationList.isNotEmpty) {
-                  print('#2: _notificationList is ${_notificationList.last}');
-
                   if (_notificationList.last ==
                       ScreenStateEvent.SCREEN_UNLOCKED) {
                     _notificationList = [];
                   }
                 } else {
-                  print(('FAILED $screenStatus and $_notification'));
                   sub.cancel();
                   Wakelock.disable();
                   Navigator.pushNamed(
@@ -111,7 +104,6 @@ class _FocusingPageState extends State<FocusingPage>
                 }
               } else {
                 counter++;
-                print('counter $counter');
               }
             }
           },
@@ -120,11 +112,8 @@ class _FocusingPageState extends State<FocusingPage>
     );
 
     sub.onDone(() {
-      print("Done");
-
       sub.cancel();
       Wakelock.disable();
-
       Navigator.pushNamed(
         context,
         SuccessPage.id,
@@ -218,7 +207,6 @@ class _FocusingPageState extends State<FocusingPage>
         context: context,
         barrierDismissible: true,
         builder: (BuildContext context) {
-          print('quit button clicked');
           return AlertDialog(
             title: Text('Are you sure you want to quit?'),
             content: RichText(
